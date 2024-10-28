@@ -1,4 +1,5 @@
 from flask import Flask, render_template, jsonify # type: ignore
+from database import load_jobs_from_db
 
 app = Flask(__name__)
 
@@ -35,13 +36,18 @@ JOBS = [
     },
 ]
 
+  
+    
 @app.route("/")
-def hello_world():
-    return render_template('home.html', jobs=JOBS, Company_name= 'Suman')
+def hello_world(): 
+    jobs = load_jobs_from_db()
+    return render_template('home.html', jobs=jobs,
+                           Company_name= 'Suman')
 
 @app.route("/api/jobs")
 def list_jobs(): 
-    return jsonify(JOBS)
+    jobs = load_jobs_from_db()
+    return jsonify(jobs)
 
 
 if __name__ =="__main__":

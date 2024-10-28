@@ -1,0 +1,19 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "xprotocol",
+                "enableSsl": "Enabled",
+                "ssl": {
+                    "ca": "ca.pem"
+                }
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "driver": "MySQL",
+            "name": "Suman Career Website",
+            "connectionTimeout": 30,
+            "connectString": "db_connection_string"
+        }
+    ]
+}
